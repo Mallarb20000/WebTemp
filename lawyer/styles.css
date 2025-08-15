@@ -1,0 +1,787 @@
+/* Lawyer Template - Navy Blue & Gold Professional Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fafafa;
+}
+
+/* Top Header */
+.top-header {
+    background: #1e3a8a;
+    color: white;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left, .header-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.consultation-btn {
+    background: #d97706;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.consultation-btn:hover {
+    background: #b45309;
+    transform: translateY(-1px);
+}
+
+/* Main Navigation */
+.main-navigation {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.law-symbol {
+    font-size: 2.5rem;
+    color: #d97706;
+}
+
+.firm-name h1 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    margin-bottom: 0.2rem;
+    font-family: 'Georgia', serif;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #d97706;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #d97706;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 200;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 1rem;
+    color: #1e3a8a;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: #f8fafc;
+    color: #d97706;
+}
+
+/* Hero Parallax Section */
+.hero-parallax {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(217, 119, 6, 0.8) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: white;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.title-line {
+    display: block;
+    opacity: 0;
+    animation: slideInUp 1s ease-out forwards;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    opacity: 0;
+    animation: slideInUp 1s ease-out 0.6s forwards;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideInUp 1s ease-out 0.9s forwards;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d97706;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #e5e7eb;
+}
+
+.cta-button {
+    background: #d97706;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: slideInUp 1s ease-out 1.2s forwards;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background: #b45309;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 119, 6, 0.4);
+}
+
+/* Practice Areas */
+.practice-areas {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.practice-card {
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.practice-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border: 1px solid #e5e7eb;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.practice-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #d97706;
+}
+
+.card-front h3 {
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+
+.card-front p {
+    color: #6b7280;
+}
+
+.card-back h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #d97706;
+}
+
+.card-back ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.card-back li {
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.card-back li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d97706;
+    font-weight: bold;
+}
+
+.learn-more {
+    background: #d97706;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    background: #b45309;
+    transform: scale(1.05);
+}
+
+/* Attorney Profiles */
+.attorney-profiles {
+    padding: 5rem 2rem;
+    background: #f8fafc;
+}
+
+.attorney-profiles h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 3rem;
+}
+
+.attorneys-showcase {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.attorney-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.attorney-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.attorney-details h3 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+}
+
+.attorney-details .title {
+    font-size: 1.1rem;
+    color: #d97706;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.attorney-details .education {
+    font-style: italic;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.attorney-details .bio {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.attorney-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.attorney-specialties span {
+    background: #1e3a8a;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+
+.attorney-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.attorney-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.attorney-card:hover,
+.attorney-card.active {
+    border-color: #d97706;
+    transform: translateX(5px);
+}
+
+.attorney-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-info h4 {
+    color: #1e3a8a;
+    margin-bottom: 0.2rem;
+}
+
+.card-info p {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 5rem 2rem;
+    background: #1e3a8a;
+    color: white;
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.testimonials-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    height: 300px;
+}
+
+.testimonial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+}
+
+.testimonial.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.testimonial-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.quote-mark {
+    font-size: 4rem;
+    color: #d97706;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.client-info h4 {
+    color: #d97706;
+    margin-bottom: 0.5rem;
+}
+
+.client-info span {
+    color: #cbd5e1;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #d97706;
+}
+
+/* Contact CTA */
+.contact-cta {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-primary,
+.cta-secondary {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-primary {
+    background: white;
+    color: #d97706;
+}
+
+.cta-primary:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+.cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-secondary:hover {
+    background: white;
+    color: #d97706;
+    transform: translateY(-2px);
+}
+
+/* Back to Portfolio */
+.back-to-portfolio {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #1e3a8a;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+}
+
+.back-to-portfolio:hover {
+    background: #3730a3;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .attorneys-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .attorney-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-parallax {
+        height: 60vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .practice-card {
+        height: 250px;
+    }
+    
+    .testimonials-carousel {
+        height: 350px;
+    }
+}
