@@ -18,7 +18,7 @@ The aim of this repository is to demonstrate professional website templates for 
 
 ### Phase 2: Growth & Upgrade
 - **If website brings positive results**: Client commits to premium package
-- **Premium package**: NPR 50,000-150,000
+- **Premium package**: will update later
 - **Includes**: Custom design, advanced features, SEO optimization, e-commerce, social media integration
 - **Ongoing support**: Monthly updates, content management, digital marketing
 
